@@ -31,7 +31,7 @@ const ChattingExerciseDetails = () => {
     const fetchExercise = useCallback(async () => {
         setLoading(true)
         try {
-            const response = await axios.get(`https://localhost:7007/api/ChattingExercise/${ChattingExerciseID}`)
+            const response = await axios.get(`http://103.82.132.113:8080/api/ChattingExercise/${ChattingExerciseID}`)
             setExercise(response.data)
 
             // Initialize messages
@@ -82,7 +82,7 @@ const ChattingExerciseDetails = () => {
                 chatMessages: updatedMessages,
             }
             try {
-                const response = await axios.post("https://localhost:7007/api/ChattingResponse", requestBody, {
+                const response = await axios.post("http://103.82.132.113:8080/api/ChattingResponse", requestBody, {
                     headers: { "Content-Type": "application/json" },
                 })
 
@@ -128,7 +128,7 @@ const ChattingExerciseDetails = () => {
     }
     const handleSaveResults = async () => {
         try {
-            const response = await axios.get(`https://localhost:7007/api/ChattingResult/ChattingExercise/${ChattingExerciseID}`);
+            const response = await axios.get(`http://103.82.132.113:8080/api/ChattingResult/ChattingExercise/${ChattingExerciseID}`);
             const data = response.data;
 
             const requestBody = {
@@ -141,10 +141,10 @@ const ChattingExerciseDetails = () => {
             };
 
             if (!data) {
-                await axios.post("https://localhost:7007/api/ChattingResult", requestBody);
+                await axios.post("http://103.82.132.113:8080/api/ChattingResult", requestBody);
                 alert("Result saved successfully (POST)");
             } else {
-                await axios.put("https://localhost:7007/api/ChattingResult", requestBody);
+                await axios.put("http://103.82.132.113:8080/api/ChattingResult", requestBody);
                 alert("Result updated successfully (PUT)");
             }
         } catch (error) {

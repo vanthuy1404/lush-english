@@ -15,7 +15,7 @@ const Practice = () => {
     useEffect(() => {
         setLoading(true)
         axios
-            .get("https://localhost:7007/api/Practices")
+            .get("http://103.82.132.113:8080/api/Practices")
             .then((response) => {
                 setPractices(response.data)
                 setLoading(false)

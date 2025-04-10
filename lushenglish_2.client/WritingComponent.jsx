@@ -12,7 +12,7 @@ const WritingComponent = ({ WritingExerciseID }) => {
   useEffect(() => {
     const fetchExerciseData = async () => {
       try {
-        const response = await fetch(`https://localhost:7007/api/WritingExercise/${WritingExerciseID}`);
+        const response = await fetch(`http://103.82.132.113:8080/api/WritingExercise/${WritingExerciseID}`);
         if (!response.ok) {
           throw new Error('Failed to fetch exercise data');
         }

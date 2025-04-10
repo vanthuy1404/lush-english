@@ -21,7 +21,7 @@ const ChattingExerciseResults = () => {
             }
 
             try {
-                const response = await axios.get(`https://localhost:7007/api/ChattingResult/user/${userID}`)
+                const response = await axios.get(`http://103.82.132.113:8080/api/ChattingResult/user/${userID}`)
                 setResults(response.data)
                 setLoading(false)
             } catch (error) {

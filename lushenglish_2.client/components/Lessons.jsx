@@ -16,7 +16,7 @@ const Lessons = () => {
     useEffect(() => {
         setLoading(true)
         axios
-            .get("https://localhost:7007/api/Topics")
+            .get("http://103.82.132.113:8080/api/Topics")
             .then((response) => {
                 setTopics(response.data)
                 setLoading(false)

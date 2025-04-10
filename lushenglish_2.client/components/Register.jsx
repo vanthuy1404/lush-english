@@ -31,7 +31,7 @@ function Register() {
 
         try {
             // Gửi yêu cầu đăng ký
-            const response = await axios.post('https://localhost:7007/api/Authentication/register', formData);
+            const response = await axios.post('http://103.82.132.113:8080/api/Authentication/register', formData);
             alert("Registration successful!");
             // Chuyển hướng đến trang đăng nhập sau khi đăng ký thành công
             window.location.href = '/login';

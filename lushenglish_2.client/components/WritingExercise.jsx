@@ -16,7 +16,7 @@ const WritingExercise = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch("https://localhost:7007/api/WritingExercise")
+        fetch("http://103.82.132.113:8080/api/WritingExercise")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok")

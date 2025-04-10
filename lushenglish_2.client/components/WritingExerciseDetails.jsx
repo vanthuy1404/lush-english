@@ -24,7 +24,7 @@ const WritingExerciseDetails = () => {
     useEffect(() => {
         const fetchExerciseData = async () => {
             try {
-                const response = await fetch(`https://localhost:7007/api/WritingExercise/${WritingExerciseID}`)
+                const response = await fetch(`http://103.82.132.113:8080/api/WritingExercise/${WritingExerciseID}`)
                 if (!response.ok) {
                     throw new Error("Failed to fetch exercise data")
                 }
@@ -69,7 +69,7 @@ const WritingExerciseDetails = () => {
         }
 
         try {
-            const response = await fetch("https://localhost:7007/api/WritingResponse", {
+            const response = await fetch("http://103.82.132.113:8080/api/WritingResponse", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -106,7 +106,7 @@ const WritingExerciseDetails = () => {
         try {
             // Check if record already exists
             const checkResponse = await fetch(
-                `https://localhost:7007/api/WritingResult/exercise/${exerciseName}/user/${userID}`,
+                `http://103.82.132.113:8080/api/WritingResult/exercise/${exerciseName}/user/${userID}`,
             )
 
             const requestBody = {
@@ -124,7 +124,7 @@ const WritingExerciseDetails = () => {
                 const existingResult = await checkResponse.json()
                 const resultID = existingResult[0].resultID
 
-                const updateResponse = await fetch(`https://localhost:7007/api/WritingResult/${resultID}`, {
+                const updateResponse = await fetch(`http://103.82.132.113:8080/api/WritingResult/${resultID}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -139,7 +139,7 @@ const WritingExerciseDetails = () => {
                 }
             } else {
                 // Record doesn't exist -> Create with POST
-                const createResponse = await fetch("https://localhost:7007/api/WritingResult", {
+                const createResponse = await fetch("http://103.82.132.113:8080/api/WritingResult", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

@@ -24,8 +24,8 @@ const PracticeQuestions = () => {
     useEffect(() => {
         setLoading(true)
 
-        const fetchPractice = axios.get(`https://localhost:7007/api/Practices/${practiceID}`)
-        const fetchQuestions = axios.get(`https://localhost:7007/api/Questions/practice/${practiceID}`)
+        const fetchPractice = axios.get(`http://103.82.132.113:8080/api/Practices/${practiceID}`)
+        const fetchQuestions = axios.get(`http://103.82.132.113:8080/api/Questions/practice/${practiceID}`)
 
         Promise.all([fetchPractice, fetchQuestions])
             .then(([practiceResponse, questionsResponse]) => {
@@ -83,12 +83,12 @@ const PracticeQuestions = () => {
 
             try {
                 // Check if user already has a score for this practice
-                const response = await axios.get(`https://localhost:7007/api/Scores/user/${userID}/practice/${practiceID}`)
+                const response = await axios.get(`http://103.82.132.113:8080/api/Scores/user/${userID}/practice/${practiceID}`)
                 const existingScore = response.data
 
                 if (existingScore) {
                     // If exists, update score
-                    await axios.put(`https://localhost:7007/api/Scores/${existingScore.scoreID}`, {
+                    await axios.put(`http://103.82.132.113:8080/api/Scores/${existingScore.scoreID}`, {
                         scoreID: existingScore.scoreID,
                         userID: userID,
                         practiceID: practiceID,
@@ -98,7 +98,7 @@ const PracticeQuestions = () => {
             } catch (error) {
                 if (error.response && error.response.status === 404) {
                     // If doesn't exist, create new score
-                    await axios.post("https://localhost:7007/api/Scores", {
+                    await axios.post("http://103.82.132.113:8080/api/Scores", {
                         scoreID: crypto.randomUUID(),
                         userID: userID,
                         practiceID: practiceID,

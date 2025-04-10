@@ -47,7 +47,7 @@ function Account() {
             }
 
             try {
-                const response = await axios.get(`https://localhost:7007/api/Users/${userID}`)
+                const response = await axios.get(`http://103.82.132.113:8080/api/Users/${userID}`)
                 setData(response.data)
             } catch (error) {
                 console.error("Error fetching user details:", error)
@@ -64,7 +64,7 @@ function Account() {
         const fetchTotalScore = async () => {
             if (!userID) return
             try {
-                const response = await axios.get(`https://localhost:7007/api/Scores/total/user/${userID}`)
+                const response = await axios.get(`http://103.82.132.113:8080/api/Scores/total/user/${userID}`)
                 setTotalScore(response.data)
             } catch (error) {
                 console.error("Error fetching total score:", error)
@@ -92,7 +92,7 @@ function Account() {
 
     const handleSaveName = async () => {
         try {
-            await axios.put(`https://localhost:7007/api/Users/${userID}`, {
+            await axios.put(`http://103.82.132.113:8080/api/Users/${userID}`, {
                 ...data,
                 fullName: editName,
             })

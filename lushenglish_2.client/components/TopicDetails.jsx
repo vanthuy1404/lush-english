@@ -18,8 +18,8 @@ const TopicDetails = () => {
     useEffect(() => {
         setLoading(true)
 
-        const fetchTopicDetails = axios.get(`https://localhost:7007/api/Topics/${topicID}`)
-        const fetchVocabularies = axios.get(`https://localhost:7007/api/Vocabularies/topic/${topicID}`)
+        const fetchTopicDetails = axios.get(`http://103.82.132.113:8080/api/Topics/${topicID}`)
+        const fetchVocabularies = axios.get(`http://103.82.132.113:8080/api/Vocabularies/topic/${topicID}`)
 
         Promise.all([fetchTopicDetails, fetchVocabularies])
             .then(([topicResponse, vocabResponse]) => {
