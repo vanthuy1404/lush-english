@@ -1,0 +1,3 @@
+Xanh duong : #4A90E2
+Cam : '#FFD700'
+Trang: #FFFFFF
