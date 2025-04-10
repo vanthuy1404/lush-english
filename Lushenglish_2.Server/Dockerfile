@@ -9,7 +9,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["lushenglish_2.client/nuget.config", "lushenglish_2.client/"]
+# COPY ["lushenglish_2.client/nuget.config", "lushenglish_2.client/"]
 COPY ["Lushenglish_2.Server/Lushenglish_2.Server.csproj", "Lushenglish_2.Server/"]
 # COPY ["lushenglish_2.client/lushenglish_2.client.esproj", "lushenglish_2.client/"]
 RUN dotnet restore "./Lushenglish_2.Server/Lushenglish_2.Server.csproj"
