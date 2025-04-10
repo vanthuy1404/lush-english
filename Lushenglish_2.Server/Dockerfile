@@ -11,7 +11,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["lushenglish_2.client/nuget.config", "lushenglish_2.client/"]
 COPY ["Lushenglish_2.Server/Lushenglish_2.Server.csproj", "Lushenglish_2.Server/"]
-COPY ["lushenglish_2.client/lushenglish_2.client.esproj", "lushenglish_2.client/"]
+# COPY ["lushenglish_2.client/lushenglish_2.client.esproj", "lushenglish_2.client/"]
 RUN dotnet restore "./Lushenglish_2.Server/Lushenglish_2.Server.csproj"
 COPY . .
 WORKDIR "/src/Lushenglish_2.Server"
