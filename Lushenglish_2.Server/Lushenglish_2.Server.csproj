@@ -24,9 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\lushenglish_2.client\lushenglish_2.client.esproj">
+    <!--<ProjectReference Include="..\lushenglish_2.client\lushenglish_2.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
+    </ProjectReference>-->
   </ItemGroup>
 
 </Project>
