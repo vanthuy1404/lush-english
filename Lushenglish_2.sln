@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lushenglish_2.Server", "Lushenglish_2.Server\Lushenglish_2.Server.csproj", "{4A975C06-492D-464A-B697-423437F24E15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Lushenglish_2.Server\Server.csproj", "{4A975C06-492D-464A-B697-423437F24E15}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "lushenglish_2.client", "lushenglish_2.client\lushenglish_2.client.esproj", "{63B5DC20-D714-4BA8-AAE2-C325D70146A1}"
 EndProject
